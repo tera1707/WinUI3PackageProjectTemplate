@@ -11,7 +11,8 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid>
-        <TextBlock Text="メインページ"/>
-    </Grid>
+    <StackPanel>
+        <TextBlock Text="{x:Bind ViewModel.MyText, Mode=OneWay}"/>
+        <Button Content="Command実行" Command="{x:Bind ViewModel.MyCommand}"/>
+    </StackPanel>
 </Page>
