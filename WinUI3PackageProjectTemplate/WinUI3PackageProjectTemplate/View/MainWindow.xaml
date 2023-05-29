@@ -1,4 +1,4 @@
-<!-- Copyright (c) Microsoft Corporation and Contributors. -->
+﻿<!-- Copyright (c) Microsoft Corporation and Contributors. -->
 <!-- Licensed under the MIT License. -->
 
 <Window
@@ -10,7 +10,17 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-        <Button x:Name="myButton" Click="myButton_Click">Click Me</Button>
-    </StackPanel>
+    <NavigationView x:Name="nvSample" SelectionChanged="nvSample_SelectionChanged"  PaneDisplayMode="Left" IsSettingsVisible="False">
+        <NavigationView.MenuItems>
+            <NavigationViewItem Icon="Emoji2" Content="メインページ" Tag="MainPage" />
+            <NavigationViewItemSeparator />
+            <NavigationViewItem Icon="Save" Content="サブページ" Tag="SubPage" />
+        </NavigationView.MenuItems>
+        <NavigationView.FooterMenuItems>
+            <NavigationViewItem Icon="Emoji2" Content="メインページ(footer)" Tag="FooterPage" />
+        </NavigationView.FooterMenuItems>
+        
+        <Frame x:Name="contentFrame"/>
+        
+    </NavigationView>
 </Window>
