@@ -31,6 +31,8 @@ namespace WinUI3PackageProjectTemplate
         public MainWindow()
         {
             this.InitializeComponent();
+
+            contentFrame.Navigate(typeof(MainPage), null);
         }
 
         private void nvSample_SelectionChanged(NavigationView sender, NavigationViewSelectionChangedEventArgs args)
