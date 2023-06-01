@@ -11,6 +11,8 @@
     <UseWinUI>true</UseWinUI>
   </PropertyGroup>
   <ItemGroup>
+    <None Remove="ResourceDictionary2.xaml" />
+    <None Remove="ResourceDictionary\ResourceDictionary1.xaml" />
     <None Remove="View\MainPage.xaml" />
     <None Remove="View\SubPage.xaml" />
   </ItemGroup>
@@ -23,6 +25,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Page Update="ResourceDictionary2.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+
+  <ItemGroup>
     <Page Update="View\SubPage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -30,6 +38,12 @@
 
   <ItemGroup>
     <Page Update="View\MainPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="ResourceDictionary\ResourceDictionary1.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>

@@ -11,8 +11,22 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <StackPanel>
-        <TextBlock Text="{x:Bind ViewModel.MyText, Mode=OneWay}"/>
-        <Button Content="Command実行" Command="{x:Bind ViewModel.MyCommand}"/>
-    </StackPanel>
+    <ListBox Grid.Row="0" ItemsSource="{x:Bind ViewModel.MyData}" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Background="Black">
+        <!-- ListBox.ItemContainerStyleを設定 -->
+        <!--項目にマウスが乗ったときに色を変える、項目が選択されたときに色を変える、といった動作を決定する-->
+        <ListBox.ItemContainerStyle>
+            <Style TargetType="ListBoxItem">
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="ContentControl">
+                            <Border Background="{TemplateBinding Background}">
+                                <ContentPresenter />
+                            </Border>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+        </ListBox.ItemContainerStyle>
+
+    </ListBox>
 </Page>
